@@ -2,7 +2,19 @@
 
 ![Golang Hello](images/golang.png)
 
-## Project setup
+## Golang setup
+
+```bash
+go build
+```
+
+### Running
+
+```bash
+./server
+```
+
+## Vue setup
 
 ```bash
 npm install
