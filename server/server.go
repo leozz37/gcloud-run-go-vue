@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 )
 
 func homePageHandler(w http.ResponseWriter, r *http.Request) {
@@ -20,8 +21,9 @@ func checkError(err error) {
 func main() {
 	http.HandleFunc("/", homePageHandler)
 
-	fmt.Println("Server listening on port 3000")
+	port := os.Args[1]
+	fmt.Println("Server listening on port " + port)
 	log.Panic(
-		http.ListenAndServe(":3000", nil),
+		http.ListenAndServe(":"+port, nil),
 	)
 }
